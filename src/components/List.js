@@ -13,7 +13,7 @@ class List extends React.Component {
     }
   }
   render() {
-    const listItems = this.state.groceryItems.map(item => <ListItem key={item.id} item={item} />)
+    const listItems = this.state.groceryItems.map(item => <ListItem key={item.id} value={item.title} item={item} />)
     return (
       <div>
         <ul>

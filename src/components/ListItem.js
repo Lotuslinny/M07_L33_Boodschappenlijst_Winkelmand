@@ -2,9 +2,11 @@ import React from "react"
 
 function ListItem(props) {
   return (
-    <div className="list-item">
+    <div >
       <li
         key={props.item.id}
+        className="list-item"
+        /*  onClick={clickItem} */
         value={props.item.title} ><h1>{props.item.title}</h1>
       </li>
 
