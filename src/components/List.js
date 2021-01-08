@@ -1,19 +1,28 @@
 import React from "react"
+import ListItem from "./ListItem"
+
 
 class List extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      groceryItems: [
+        { id: 1, title: "Appels" },
+        { id: 2, title: "Pak melk" }
+      ]
+    }
+  }
   render() {
+    const listItems = this.state.groceryItems.map(item => <ListItem key={item.id} item={item} />)
     return (
       <div>
         <ul>
-          <li>Groenten</li>
-          <li>Rijst</li>
-          <li>Melk</li>
-          <li>Brood</li>
-          <li>Vlokken</li>
+          {listItems}
         </ul>
       </div>
     )
   }
 }
+
 
 export default List
