@@ -7,7 +7,6 @@ function App() {
   return (
     <div>
       <Container />
-      <h1>Hello, is it me you're looking for?</h1>
     </div>
   )
 

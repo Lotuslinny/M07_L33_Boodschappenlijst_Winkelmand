@@ -1,7 +1,7 @@
 import React from "react"
 import List from "./List"
 
-function ShoppingCart(props) {
+function ShoppingCart() {
   return (
     <div >
       <List />
