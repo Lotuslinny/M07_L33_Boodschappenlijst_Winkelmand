@@ -1,12 +1,12 @@
 import React from 'react'
-import List from "./components/List"
+import Container from "./Container"
 
 
 
 function App() {
   return (
     <div>
-      <List />
+      <Container />
       <h1>Hello, is it me you're looking for?</h1>
     </div>
   )
