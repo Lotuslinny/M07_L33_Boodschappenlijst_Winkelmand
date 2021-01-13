@@ -19,22 +19,6 @@ class Container extends React.Component {
 
     }
   }
-  /* render() {
-    const gItems = this.state.groceryItems.map(item => <ListItem key={item.id} value={item.title} item={item} />)
-    const sItems = this.state.shoppingListItems.map(item => <ListItem key={item.id} value={item.title} item={item} />)
-    return (
-      <div>
-        <h1>Boodschappenlijst</h1>
-        <ul>
-          {gItems}
-        </ul>
-        <h1>Winkelmand</h1>
-        <ul>
-          {sItems}
-        </ul>
-      </div>
-    )
-  } */
   render() {
     return (
       <div>
