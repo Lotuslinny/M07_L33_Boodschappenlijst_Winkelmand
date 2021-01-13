@@ -1,17 +1,17 @@
 import React from "react"
-/* import GroceryList from "./components/GroceryList"
-import ShoppingCart from "./components/ShoppingCart" */
-import ListItem from "./components/ListItem"
+import ShoppingList from "./components/ShoppingList"
+import Cart from "./components/Cart"
+
 
 class Container extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      groceryItems: [
+      shoppingListItems: [
         { id: 1, title: "Appels" },
         { id: 2, title: "Pak melk" }
       ],
-      shoppingListItems: [
+      cartItems: [
         { id: 1, title: "Peren" },
         { id: 2, title: "Chocolade" }
       ]
@@ -19,7 +19,7 @@ class Container extends React.Component {
 
     }
   }
-  render() {
+  /* render() {
     const gItems = this.state.groceryItems.map(item => <ListItem key={item.id} value={item.title} item={item} />)
     const sItems = this.state.shoppingListItems.map(item => <ListItem key={item.id} value={item.title} item={item} />)
     return (
@@ -32,6 +32,16 @@ class Container extends React.Component {
         <ul>
           {sItems}
         </ul>
+      </div>
+    )
+  } */
+  render() {
+    return (
+      <div>
+        <h1>Boodschappenlijst</h1>
+        <ShoppingList items={this.state.shoppingListItems} />
+        <h1>Winkelmand</h1>
+        <Cart items={this.state.cartItems} />
       </div>
     )
   }
