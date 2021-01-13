@@ -1,15 +1,25 @@
-
 import React from "react"
-import { render } from "react-dom"
 import ListItem from "./ListItem"
 
-
-function List(props) {
-  render()
+const List = (props) => {
+  /*  Of je moet hier!!! een clickItem() functie maken, of je moet
+   hem uit je container halen en dan dus d.m.v. 
+   props.functieNaam hem hier in je onClick zetten */
   return (
-    <listItem items={props.items.map(item => key = { props.item.id } value = { item.title } item = { item })} />
+    <ul>
+      {props.items.map((item) => {
+        return (
+          <ListItem
+            key={props.item.id}
+            className="list-item"
+            //onClick={clickItem}
+            value={props.item.title}
+          ><h1>{props.item.title}</h1>
+          </ListItem>
+      </ul>
+  );
+})
 
-  )
-}
+
 
 export default List

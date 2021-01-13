@@ -4,10 +4,10 @@ function ListItem(props) {
   return (
     <div >
       <li
-        key={props.item.id}
+        key={id}
         className="list-item"
         /*  onClick={clickItem} */
-        value={props.item.title} ><h1>{props.item.title}</h1>
+        value={title} ><h1>{props.item.title}</h1>
       </li>
 
     </div>
