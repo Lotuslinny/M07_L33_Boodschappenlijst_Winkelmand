@@ -1,10 +1,10 @@
 import React from "react"
 import List from "./List"
 
-function Cart() {
+function Cart(props) {
 
   return (
-    <List />
+    <List items={props.items} />
   )
 }
 

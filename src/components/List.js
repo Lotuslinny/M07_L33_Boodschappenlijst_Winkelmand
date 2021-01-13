@@ -10,16 +10,14 @@ const List = (props) => {
       {props.items.map((item) => {
         return (
           <ListItem
-            key={props.item.id}
+            key={item.id}
             className="list-item"
             //onClick={clickItem}
-            value={props.item.title}
-          ><h1>{props.item.title}</h1>
-          </ListItem>
-      </ul>
-  );
-})
-
-
-
+            item={item.title}
+          />
+        )
+      })}
+    </ul>
+  )
+}
 export default List

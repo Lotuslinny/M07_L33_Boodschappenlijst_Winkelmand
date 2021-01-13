@@ -2,10 +2,10 @@ import React from "react"
 
 import List from "./List"
 
-function ShoppingList() {
+function ShoppingList(props) {
 
   return (
-    <List />
+    <List items={props.items} />
   )
 }
 export default ShoppingList
