@@ -1,12 +1,11 @@
 import React from "react"
 import List from "./List"
 
-function ShoppingCart() {
+function Cart() {
+
   return (
-    <div >
-      <List />
-    </div>
+    <List />
   )
 }
 
-export default ShoppingCart
+export default Cart

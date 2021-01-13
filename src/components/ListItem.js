@@ -5,7 +5,7 @@ function ListItem(props) {
     <div >
       <li
         key={props.item.id}
-        //className="list-item"
+        className="list-item"
         /*  onClick={clickItem} */
         value={props.item.title} ><h1>{props.item.title}</h1>
       </li>

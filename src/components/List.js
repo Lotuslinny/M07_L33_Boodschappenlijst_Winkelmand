@@ -1,20 +1,15 @@
-import { render } from "@testing-library/react"
+
 import React from "react"
+import { render } from "react-dom"
 import ListItem from "./ListItem"
 
-function List() {
+
+function List(props) {
   render()
   return (
-    <div>
+    <listItem items={props.items.map(item => key = { props.item.id } value = { item.title } item = { item })} />
 
-      <ListItem />
-
-      <ListItem />
-
-    </div>
   )
 }
-
-
 
 export default List
