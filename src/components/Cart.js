@@ -4,7 +4,10 @@ import List from "./List"
 function Cart(props) {
 
   return (
-    <List items={props.items} />
+    <div>
+      <List items={props.items} />
+
+    </div>
   )
 }
 

@@ -5,7 +5,9 @@ import List from "./List"
 function ShoppingList(props) {
 
   return (
-    <List items={props.items} />
+    <div>
+      <List items={props.items} />
+    </div>
   )
 }
 export default ShoppingList

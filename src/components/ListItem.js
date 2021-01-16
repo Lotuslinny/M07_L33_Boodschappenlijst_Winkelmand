@@ -1,13 +1,15 @@
 import React from "react"
 
 function ListItem(props) {
-  console.log(props.item)
+  const handleClickShoppingItem = () =>
+    console.log("hello")
+
   return (
-    <div >
+    <div style={{ backgroundColor: "#f4f4f4" }}>
       <li
         id={props.item.id}
         className="list-item"
-        /*  onClick={clickItem} */
+        onClick={handleClickShoppingItem}
         name={props.item.title} ><h1>{props.item}</h1>
       </li>
 
