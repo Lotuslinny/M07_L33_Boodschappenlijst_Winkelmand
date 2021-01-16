@@ -18,7 +18,7 @@ class Container extends React.Component {
       ]
     }
   }
-  handleClickItem = (e) => {
+  handleClick = (e) => {
     console.log("I was clicked")
   }
   render() {
@@ -31,7 +31,7 @@ class Container extends React.Component {
         <h1>Winkelmand</h1>
         <Cart
           items={this.state.cartItems} />
-        <button onClick={this.handleClickItem}>Click me</button>
+        <button onClick={this.handleClick}>Click me</button>
       </div>
     )
   }

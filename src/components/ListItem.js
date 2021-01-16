@@ -1,7 +1,7 @@
 import React from "react"
 
 function ListItem(props) {
-  const handleClickShoppingItem = () =>
+  const handleClickItem = () =>
     console.log("hello")
 
   return (
@@ -9,7 +9,7 @@ function ListItem(props) {
       <li
         id={props.item.id}
         className="list-item"
-        onClick={handleClickShoppingItem}
+        onClick={handleClickItem}
         name={props.item.title} ><h1>{props.item}</h1>
       </li>
 
