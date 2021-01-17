@@ -17,9 +17,14 @@ class Container extends React.Component {
         { id: 2, title: "Chocolade" }
       ]
     }
+
   }
+
   handleClick = (e) => {
-    console.log("I was clicked")
+    console.log(this)
+  }
+  handleClickShoppingItem = (e) => {
+    console.log("hello")
   }
   render() {
     return (
@@ -27,6 +32,7 @@ class Container extends React.Component {
         <h1>Boodschappenlijst </h1>
         <ShoppingList
           items={this.state.shoppingListItems}
+          handleClickShoppingItem={this.handleClickShoppingItem}
         />
         <h1>Winkelmand</h1>
         <Cart

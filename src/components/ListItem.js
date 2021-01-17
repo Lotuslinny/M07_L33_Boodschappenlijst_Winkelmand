@@ -1,19 +1,20 @@
 import React from "react"
 
-function ListItem(props) {
-  const handleClickItem = () =>
+const ListItem = (props) => {
+  const handleClickShoppingItem = (e) => {
     console.log("hello")
+  }
 
   return (
     <div style={{ backgroundColor: "#f4f4f4" }}>
       <li
         id={props.item.id}
         className="list-item"
-        onClick={handleClickItem}
+        onClick={handleClickShoppingItem}
         name={props.item.title} ><h1>{props.item}</h1>
       </li>
 
-    </div>
+    </div >
   )
 }
 export default ListItem

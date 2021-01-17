@@ -6,7 +6,10 @@ function ShoppingList(props) {
 
   return (
     <div>
-      <List items={props.items} />
+      <List
+        items={props.items}
+        handleClickShoppingItem={props.handleClickShoppingItem}
+      />
     </div>
   )
 }
