@@ -2,9 +2,12 @@ import React from "react"
 
 const ListItem = (props) => {
   const handleClickShoppingItem = (e) => {
-    console.log("hello")
+    // if(props.item.type === "Shoppinglist")
+    console.log(props.item)
   }
-
+  /* const handleClickCartItem = (e) => {
+    console.log(props.item)
+  } */
   return (
     <div style={{ backgroundColor: "#f4f4f4" }}>
       <li
@@ -12,9 +15,19 @@ const ListItem = (props) => {
         className="list-item"
         onClick={handleClickShoppingItem}
         name={props.item.title} ><h1>{props.item}</h1>
-      </li>
-
-    </div >
+      </li>          </div >
   )
 }
-export default ListItem
+const CartListItem = (props) => {
+  return (
+    <div style={{ backgroundColor: "#f4f4f4" }}>
+      <li
+        id={props.item.id}
+        className="list-item"
+        name={props.item.title} ><h1>{props.item}</h1>
+      </li>          </div >
+  )
+}
+export { ListItem, CartListItem }
+
+

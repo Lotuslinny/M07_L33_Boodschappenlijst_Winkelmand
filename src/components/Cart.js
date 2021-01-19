@@ -6,7 +6,7 @@ function Cart(props) {
   return (
     <div>
       <List items={props.items}
-        handleClickShoppingItem={props.handleClickShoppingItem}
+
       />
 
     </div>
