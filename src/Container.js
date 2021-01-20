@@ -20,16 +20,14 @@ class Container extends React.Component {
   } handleClick = () => {
     console.log(this.shoppingItemsList.shoppingListItems)
   }
-  onClickShoppingItems = (e) => {
-    console.log(this.shoppingItemsList.shoppingListItems)
-  }
+
   render() {
     return (
       <div>
         <h1>Boodschappenlijst </h1>
         <ShoppingList
           items={this.shoppingItemsList.shoppingListItems}
-          shoppingItems={this.onClickShoppingItems()}
+
         />
         <h1>Winkelmand</h1>
         <Cart

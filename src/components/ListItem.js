@@ -2,8 +2,13 @@ import React from "react"
 
 const ListItem = (props) => {
   const handleClickShoppingItem = (e) => {
-    // if(props.item.type === "Shoppinglist")
-    console.log(props.item)
+    if (props.item.type === "Shoppinglist")
+      return props.item.cart.push("orange")
+    else {
+      console.log("Ha")
+
+    }
+
   }
   /* const handleClickCartItem = (e) => {
     console.log(props.item)
