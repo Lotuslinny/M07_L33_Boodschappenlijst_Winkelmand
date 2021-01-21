@@ -19,15 +19,20 @@ class Container extends React.Component {
     }
 
     // make sure certain functions have correct this.
-    this.cartItemsList = this.cartItemsList.bind(this);
+    this.addNewItemToCart = this.addNewItemToCart.bind(this)
     /* this.handleClick = this.handleClick.bind(this); */
   }
   addNewItemToCart(item) {
-
     this.cartItemsList({
       cartItemsTitles: [...this.cartItemsList.cartItems].concat([item])
     });
   }
+
+  /* addNewItemToCart(item) {
+    this.cartItemsList({
+      cartItemsTitles: [...this.cartItemsList.cartItems].concat([item])
+    });
+  } */
 
 
 
@@ -52,26 +57,4 @@ class Container extends React.Component {
 }
 
 export default Container
-
-/* class Toggle extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {isToggleOn: true};    // This binding is necessary to make `this` work in the callback
-    this.handleClick = this.handleClick.bind(this);
-  }  handleClick() {
-    this.setState(prevState => ({
-      isToggleOn: !prevState.isToggleOn
-    }));
-  }  render() {
-    return (
-      <button onClick={this.handleClick}>
-        {this.state.isToggleOn ? 'ON' : 'OFF'}
-      </button>
-    );
-  }
-}ReactDOM.render(
-  <Toggle />,
-  document.getElementById('root')
-); */
-
 

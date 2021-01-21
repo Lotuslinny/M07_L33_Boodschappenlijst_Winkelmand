@@ -17,24 +17,6 @@ const ListItem = (props) => {
         onClick={handleClickShoppingItem}
         name={props.item.title} ><h1>{props.item}</h1>
       </li>
-      <li
-        id={props.item.id}
-        className="list-item"
-        onClick={handleClickShoppingItem}
-        name={props.item.title} ><h1>{props.item}</h1>
-      </li>
-      <li
-        id={props.item.id}
-        className="list-item"
-        onClick={handleClickShoppingItem}
-        name={props.item.title} ><h1>{props.item}</h1>
-      </li>
-      <li
-        id={props.item.id}
-        className="list-item"
-        onClick={handleClickShoppingItem}
-        name={props.item.title} ><h1>{props.item}</h1>
-      </li>
     </div >
   )
 }
@@ -45,18 +27,7 @@ const CartListItem = (props) => {
         id={props.item.id}
         className="list-item"
         name={props.item.title} ><h1>{props.item}</h1>
-      </li>
-      <li
-        id={props.item.id}
-        className="list-item"
-        name={props.item.title} ><h1>{props.item}</h1>
-      </li>
-      <li
-        id={props.item.id}
-        className="list-item"
-        name={props.item.title} ><h1>{props.item}</h1>
-      </li>
-    </div >
+      </li>          </div >
   )
 }
 export { ListItem, CartListItem }
