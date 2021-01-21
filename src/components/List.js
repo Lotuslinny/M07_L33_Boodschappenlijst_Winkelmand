@@ -10,7 +10,7 @@ const List = (props) => {
     <div>
       <ul>
         {props.items.map((item) => {
-          console.log(props.items)
+          //return props.items
           if (item.type === "Shoppinglist")
             return (
               <ListItem
