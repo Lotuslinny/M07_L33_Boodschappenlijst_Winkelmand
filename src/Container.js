@@ -11,7 +11,7 @@ class Container extends React.Component {
         { type: "Shoppinglist", id: 2, title: "Pak melk" }
       ]
     }
-    this.cartItemsList = {
+    this.state.cartItemsList = {
       cartItems: [
         { type: "Cartlist", id: 1, title: "Peren" },
         { type: "Cartlist", id: 2, title: "Chocolade" }
@@ -22,10 +22,16 @@ class Container extends React.Component {
     this.addNewItemToCart = this.addNewItemToCart.bind(this)
     /* this.handleClick = this.handleClick.bind(this); */
   }
-  addNewItemToCart(item) {
-    this.cartItemsList({
-      cartItemsTitles: [...this.cartItemsList.cartItems].concat([item])
-    });
+  addNewItemToCart(shoppingListItem) {
+    this.cartItemsList = (prevState) => {
+      //copy the cartItems of the old state
+      const newCartItems = [...prevState, cartItems];
+      //Add present to newPresents
+      newCartItems.push(shoppingListItem);
+      //create newState
+      const newState = { ...prevState, cartItems: newCartItems };
+      return newState;
+    }
   }
 
   /* addNewItemToCart(item) {
