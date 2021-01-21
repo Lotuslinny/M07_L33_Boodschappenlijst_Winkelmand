@@ -17,9 +17,22 @@ class Container extends React.Component {
         { type: "Cartlist", id: 2, title: "Chocolade" }
       ]
     }
-  } handleClick = () => {
-    console.log(this.shoppingItemsList.shoppingListItems)
+
+    // make sure certain functions have correct this.
+    this.cartItemsList = this.cartItemsList.bind(this);
+    /* this.handleClick = this.handleClick.bind(this); */
   }
+  addNewItemToCart(item) {
+
+    this.cartItemsList({
+      cartItemsTitles: [...this.cartItemsList.cartItems].concat([item])
+    });
+  }
+
+
+
+  /* handleClick = (item) => {
+    console.log(this.shoppingItemsList.shoppingListItems) */
 
   render() {
     return (
@@ -27,16 +40,18 @@ class Container extends React.Component {
         <h1>Boodschappenlijst </h1>
         <ShoppingList
           items={this.shoppingItemsList.shoppingListItems}
-
         />
         <h1>Winkelmand</h1>
         <Cart
           items={this.cartItemsList.cartItems} />
-        <button onClick={this.handleClick}>Click me</button>
+        {/* <button onClick={this.handleClick}>Click me</button> */}
       </div >
     )
+
   }
-} export default Container
+}
+
+export default Container
 
 /* class Toggle extends React.Component {
   constructor(props) {
