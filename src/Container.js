@@ -5,7 +5,7 @@ import Cart from "./components/Cart"
 class Container extends React.Component {
   constructor(props) {
     super(props)
-    this.shoppingItemsList = {
+    this.state.shoppingItemsList = {
       shoppingListItems: [
         { type: "Shoppinglist", id: 1, title: "Appels" },
         { type: "Shoppinglist", id: 2, title: "Pak melk" }
@@ -23,7 +23,7 @@ class Container extends React.Component {
     /* this.handleClick = this.handleClick.bind(this); */
   }
   addNewItemToCart(shoppingListItem) {
-    this.cartItemsList = (prevState) => {
+    this.setState.cartItemsList = (prevState) => {
       //copy the cartItems of the old state
       const newCartItems = [...prevState, cartItems];
       //Add present to newPresents
