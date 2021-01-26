@@ -16,7 +16,7 @@ const List = (props) => {
               <ListItem
                 key={item.id}
                 className="list-item"
-                handleClickShoppingItem={item.handleClickShoppingItem}
+                handleClickShoppingItem={props.handleClickShoppingItem}
                 item={item.title}
                 type={item.type}
               />

@@ -3,8 +3,8 @@ import ShoppingList from "./components/ShoppingList"
 import Cart from "./components/Cart"
 
 class Container extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state =
     {
       shoppingItemsList: [
@@ -16,27 +16,37 @@ class Container extends React.Component {
         { type: "Cartlist", id: 2, title: "Chocolade" }
       ]
     }
-    this.addItemToCart = this.addItemToCart.bind(this)
+    this.handleClickShoppingItem = this.handleClickShoppingItem.bind(this)
+    //this.addItemToCart = this.addItemToCart.bind(this)
+    //console.log("hello")
   }
-  addItemToCart(item) {
-    this.setState((prevState) => {
+  handleClickShoppingItem() {
+    // if(props.item.type === "Shoppinglist")
+    console.log("hello!")
+  }
+  /* addItemToCart(clickedItem) {
+    //console.log("hello")
+    this.setState(prevState => {
+
       //copy the cartItems of the old state.
       const newState = { ...prevState };
-      newState.cartItems = [...newState.cartItems, item];
+      newState.cartItems = [...prevState.cartItems, clickedItem];
       //add item to newState.cartItems
-      newState.cartItems.push(item);
+      newState.cartItems.push(clickedItem);
+
       //create newState
       const newCartItems = { ...prevState, cartItems: newState.cartItems }
-      alert(newCartItems);
-    });
-  }
+      return newCartItems
+    }); */
+  //}
   render() {
     return (
       <div>
         <h1>Boodschappenlijst </h1>
         <ShoppingList
           items={this.state.shoppingItemsList}
-          addItem={this.addItemToCart}
+          handleClickShoppingItem={this.handleClickShoppingItem}
+        //addItem={this.addItemToCart}
         />
         <h1>Winkelmand</h1>
         <Cart items={this.state.cartItems} />

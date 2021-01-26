@@ -1,10 +1,7 @@
 import React from "react"
 
 const ListItem = (props) => {
-  const handleClickShoppingItem = (e) => {
-    // if(props.item.type === "Shoppinglist")
-    console.log(props.item)
-  }
+
 
   /* const handleClickCartItem = (e) => {
     console.log(props.item)
@@ -14,7 +11,7 @@ const ListItem = (props) => {
       <li
         id={props.item.id}
         className="list-item"
-        onClick={handleClickShoppingItem}
+        onClick={props.handleClickShoppingItem}
         name={props.item.title} ><h1>{props.item}</h1>
       </li>
     </div >
