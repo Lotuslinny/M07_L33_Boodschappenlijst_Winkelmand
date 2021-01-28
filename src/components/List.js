@@ -14,9 +14,11 @@ const List = (props) => {
           if (item.type === "Shoppinglist")
             return (
               <ListItem
-                key={item.id}
+                // key={item.id}
+                id={item.id}
                 className="list-item"
                 handleClickShoppingItem={props.handleClickShoppingItem}
+                //addItemToCart={props.addItemToCart}
                 item={item.title}
                 type={item.type}
               />
@@ -24,7 +26,8 @@ const List = (props) => {
           else
             return (
               <CartListItem
-                key={item.id}
+                //key={item.id}
+                id={item.id}
                 className="list-item"
                 item={item.title}
                 type={item.type} />

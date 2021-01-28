@@ -12,19 +12,22 @@ const ListItem = (props) => {
         id={props.item.id}
         className="list-item"
         onClick={props.handleClickShoppingItem}
-        name={props.item.title} ><h1>{props.item}</h1>
+        //onChange={props.addItemToCart}
+        name={props.item.title} >
+        <h1>{props.item}</h1>
       </li>
     </div >
   )
 }
 const CartListItem = (props) => {
   return (
-    <div style={{ backgroundColor: "#f4f4f4" }}>
+    <div >
       <li
         id={props.item.id}
         className="list-item"
         name={props.item.title} ><h1>{props.item}</h1>
-      </li>          </div >
+      </li>
+    </div >
   )
 }
 export { ListItem, CartListItem }
