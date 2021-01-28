@@ -9,7 +9,7 @@ const ListItem = (props) => {
   return (
     <div style={{ backgroundColor: "#f4f4f4" }}>
       <li
-        key={props.item.id}
+        //key={props.item.id}
         //id={props.item.id}
         className="list-item"
         onClick={props.handleClickShoppingItem}
@@ -24,7 +24,7 @@ const CartListItem = (props) => {
   return (
     <div >
       <li
-        key={props.item.id}
+        //key={props.item.id}
         //id={props.item.id}
         className="list-item"
         name={props.title} ><h1>{props.item}</h1>

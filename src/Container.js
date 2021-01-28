@@ -22,10 +22,11 @@ class Container extends React.Component {
   }
   handleClickShoppingItem = (event) => {
     const clickedItem = event.target.innerHTML;
+    //console.log(clickedItem)
     this.setState((prevState) => {
       //copy the items of the old cartItems
       const newCartItems = [...prevState.cartItems];
-      //console.log("hello")
+      // console.log(newCartItems)
       // add item to the NewCartItems
       newCartItems.push(clickedItem);
       //console.log("hello")
@@ -33,7 +34,7 @@ class Container extends React.Component {
       const newState = { prevState, cartItems: newCartItems };
       // create newState
       // create newState
-      console.log("hello")
+      console.log(newState)
       return newState
 
     });
