@@ -14,8 +14,8 @@ const List = (props) => {
           if (item.type === "Shoppinglist")
             return (
               <ListItem
-                // key={item.id}
-                id={item.id}
+                key={item.id}
+                //id={item.id}
                 className="list-item"
                 handleClickShoppingItem={props.handleClickShoppingItem}
                 //addItemToCart={props.addItemToCart}

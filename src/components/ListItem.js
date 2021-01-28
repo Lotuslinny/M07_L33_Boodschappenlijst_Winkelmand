@@ -9,7 +9,8 @@ const ListItem = (props) => {
   return (
     <div style={{ backgroundColor: "#f4f4f4" }}>
       <li
-        id={props.item.id}
+        key={props.item.id}
+        //id={props.item.id}
         className="list-item"
         onClick={props.handleClickShoppingItem}
         //onChange={props.addItemToCart}
@@ -23,9 +24,10 @@ const CartListItem = (props) => {
   return (
     <div >
       <li
-        id={props.item.id}
+        key={props.item.id}
+        //id={props.item.id}
         className="list-item"
-        name={props.item.title} ><h1>{props.item}</h1>
+        name={props.title} ><h1>{props.item}</h1>
       </li>
     </div >
   )
