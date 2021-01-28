@@ -2,7 +2,7 @@ import React from "react"
 
 import List from "./List"
 
-function ShoppingList(props) {
+const ShoppingList = (props) => {
 
   return (
     <div>
