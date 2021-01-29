@@ -28,8 +28,8 @@ const List = (props) => {
           else
             return (
               <CartListItem
-                //key={item.id}
-                id={item.id}
+                key={item.id}
+                //id={item.id}
                 className="list-item"
                 item={item.title}
                 type={item.type} />
