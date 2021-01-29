@@ -9,7 +9,7 @@ const ShoppingList = (props) => {
       <List
         items={props.items}
         handleClickShoppingItem={props.handleClickShoppingItem}
-      //addItemToCart={props.addItemToCart}
+      //filterClickedItem={props.filterClickedItem}
       />
     </div>
   )

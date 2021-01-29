@@ -13,7 +13,7 @@ const ListItem = (props) => {
         //id={props.item.id}
         className="list-item"
         onClick={props.handleClickShoppingItem}
-        //onChange={props.addItemToCart}
+        //filterClickedItem={props.filterClickedItem}
         value={props.item.title} >
         <h1>{props.item}</h1>
       </li>

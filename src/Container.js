@@ -18,35 +18,33 @@ class Container extends React.Component {
       ]
     }
     this.handleClickShoppingItem = this.handleClickShoppingItem.bind(this)
-    //this.addItemToCart = this.addItemToCart.bind(this)
-    console.log("hello")
   }
-
-
-
-
+  createNewItem = (clickedItem) => {
+    // create new item
+    const newItem = {
+      type: "Cartlist",
+      id: this.state.cartItems.length + 1,
+      title: clickedItem
+    }
+    return newItem
+  }
   handleClickShoppingItem = (event) => {
     const clickedItemHTML = event.target;
+    // get value from clicked item.
+    const clickedItem = clickedItemHTML.innerText;
     // console.log(clickedItem)
     this.setState((prevState) => {
-      // get value from clicked item.
-      const clickedItem = clickedItemHTML.innerText;
       // get all current cart items
       const allCurrentCartItems = this.state.cartItems;
       // filter in cart items for clickedItem value
       const itemExists = allCurrentCartItems.filter(item => item.title === clickedItem);
       // if array length is 0, then the item isnt yet available in the cart
       if (itemExists.length === 0) {
-        // create new item
-        const newItem = {
-          type: "Cartlist",
-          id: this.state.cartItems.length + 1,
-          title: clickedItem
-        };
+        const newItem = this.createNewItem(clickedItem)
         // push new item into the array 
         allCurrentCartItems.push(newItem);
-      }
-      //console.log(allCurrentCartItems);
+        //console.log(allCurrentCartItems);
+      };
       // create newState
       const newState = { prevState, cartItems: allCurrentCartItems };
       return newState
@@ -59,7 +57,6 @@ class Container extends React.Component {
         id: this.state.cartItems.length + 1,
         title: itemTitle
       };
-
       this.setState(prevState => {
         const newCartList = prevState.cartItems.concat(newItem)
         return {
@@ -83,4 +80,3 @@ class Container extends React.Component {
   }
 }
 export default Container
-

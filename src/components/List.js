@@ -20,7 +20,7 @@ const List = (props) => {
                 //id={item.id}
                 className="list-item"
                 handleClickShoppingItem={props.handleClickShoppingItem}
-                //addItemToCart={props.addItemToCart}
+                //filterClickedItem={props.filterClickedItem}
                 item={item.title}
                 type={item.type}
               />
