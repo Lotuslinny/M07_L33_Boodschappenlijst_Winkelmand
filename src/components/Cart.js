@@ -7,6 +7,10 @@ const Cart = (props) => {
     <div>
       <List items={props.items}
       />
+      <button className="cart-button"
+        onClick={props.handleClickCart}>
+        Leeg Winkelwagen
+          </button>
     </div>
   )
 }

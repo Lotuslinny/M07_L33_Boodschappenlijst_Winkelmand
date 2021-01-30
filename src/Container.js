@@ -18,6 +18,11 @@ class Container extends React.Component {
       ]
     }
     this.handleClickShoppingItem = this.handleClickShoppingItem.bind(this)
+    this.handleClickCart = this.handleClickCart.bind(this)
+  }
+  handleClickCart = () => {
+    console.log('hello')
+    this.setState({ cartItems: [] });
   }
   createNewItem = (clickedItem) => {
     // create new item
@@ -49,22 +54,9 @@ class Container extends React.Component {
       const newState = { prevState, cartItems: allCurrentCartItems };
       return newState
     });
+
   }
-
   render() {
-    /* const addItemToCart = itemTitle => {
-      const newItem = {
-        id: this.state.cartItems.length + 1,
-        title: itemTitle
-      };
-      this.setState(prevState => {
-        const newCartList = prevState.cartItems.concat(newItem)
-        return {
-          cartItems: newCartList
-        };
-      }); */
-
-
     return (
       <div>
         <h1>Boodschappenlijst </h1>
@@ -74,7 +66,9 @@ class Container extends React.Component {
         //addItemToCart={this.handleClickShoppingItem}
         />
         <h1>Winkelmand</h1>
-        <Cart items={this.state.cartItems} />
+        <Cart items={this.state.cartItems}
+          handleClickCart={this.handleClickCart}
+        />
       </div >
     )
   }
