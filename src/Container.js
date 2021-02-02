@@ -15,13 +15,46 @@ class Container extends React.Component {
         { type: "Cartlist", id: 1, title: "Peren" },
         { type: "Cartlist", id: 2, title: "Chocolade" },
         { type: "Cartlist", id: 3, title: "Sperziebonen" }
-      ]
+      ],
+      inputField: { type: "input", title: " " },
     }
     this.handleClickShoppingItem = this.handleClickShoppingItem.bind(this)
     this.handleClickCart = this.handleClickCart.bind(this)
+    this.handleClickInputField = this.handleClickInputField.bind(this)
+  }
+  handleClickInputField = (event) => {
+    const input = event.target;
+    const inputValue = input.title;
+    console.log(inputValue)
+    this.setState((prevState) => {
+      // get all current shoppingItemsList 
+      const allCurrentShoppingItems = this.state.shoppingItemsList;
+      // filter in shopping items for inputvalue
+      const shoppingItemExists = allCurrentShoppingItems.filter(item => item.title === inputValue);
+      // if array length is 0, then the item isnt yet available in the shoppinglist
+      if (shoppingItemExists.length === 0) {
+        const newShoppingItem = this.createNewShoppingItem(inputValue)
+        // push new item into the array 
+        allCurrentShoppingItems.push(newShoppingItem);
+        console.log(allCurrentShoppingItems);
+      };
+      // create newState
+      const newState = { prevState, shoppingItemsList: allCurrentShoppingItems };
+      return newState
+    });
+
+  }
+  createNewShoppingItem = (inputValue) => {
+    // create new item
+    const newShoppingItem = {
+      type: "ShoppingList",
+      id: this.state.shoppingItemsList.length + 1,
+      //key: this.state.id,
+      title: inputValue
+    }
+    return newShoppingItem
   }
   handleClickCart = () => {
-    console.log('hello')
     this.setState({ cartItems: [] });
   }
   createNewItem = (clickedItem) => {
@@ -63,7 +96,7 @@ class Container extends React.Component {
         <ShoppingList
           items={this.state.shoppingItemsList}
           handleClickShoppingItem={this.handleClickShoppingItem}
-        //addItemToCart={this.handleClickShoppingItem}
+          handleClickInputField={this.handleClickInputField}
         />
         <h1>Winkelmand</h1>
         <Cart items={this.state.cartItems}

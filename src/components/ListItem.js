@@ -25,9 +25,9 @@ const CartListItem = (props) => {
     <div >
       <li
         key={props.item.id}
-        //id={props.item.id}
         className="list-item"
-        value={props.title}><h1>{props.item}</h1>
+        value={props.title}>
+        <h1>{props.item}</h1>
       </li>
     </div >
   )
