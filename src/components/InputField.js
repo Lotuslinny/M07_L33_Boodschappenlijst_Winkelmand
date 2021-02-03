@@ -3,13 +3,20 @@ import React from "react"
 const InputField = (props) => {
   return (
     <div>
-      <input
-        className="input-field"
-        //key={props.id}
-        type={props.text}
-        value={props.title}
-        onChange={props.handleChange}>
-      </input>
+      <form onSubmit={props.handleSubmit}>
+        <input
+          className="input-field"
+          //key={props.id}
+          type={props.text}
+          value={props.value}
+          onChange={props.handleChange}>
+        </input>
+        <input
+          type="submit"
+          value="Voeg toe"
+        >
+        </input >
+      </form>
     </div >
   )
 }

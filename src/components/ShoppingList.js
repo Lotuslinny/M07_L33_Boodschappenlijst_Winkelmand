@@ -9,14 +9,9 @@ const ShoppingList = (props) => {
         type={props.text}
         value={props.title}
         handleChange={props.handleChange}
+        handleSubmit={props.handleSubmit}
       />
-      <button
-        //key={props.id}
-        type={props.onClick}
-        value={props.value}
-        onClick={props.handleClickInputField}>
-        Voeg toe
-        </button >
+
       <List
         items={props.items}
         handleClickShoppingItem={props.handleClickShoppingItem}

@@ -21,12 +21,17 @@ class Container extends React.Component {
     this.handleClickShoppingItem = this.handleClickShoppingItem.bind(this)
     this.handleClickCart = this.handleClickCart.bind(this)
     this.handleChange = this.handleChange.bind(this)
-    this.handleClickInputField = this.handleClickInputField.bind(this)
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
-  handleClickInputField = () => {
-    const inputValue = handleChange();
-    //console.log(inputValue)
-    this.setState((prevState) => {
+  handleChange = (event) => {
+    return this.setState({ value: event.target.value });
+  }
+
+  handleSubmit = (event) => {
+    const inputValue = this.state.value
+    event.preventDefault();
+    this.setState((...prevState) => {
       // get all current shoppingItemsList 
       const allCurrentShoppingItems = this.state.shoppingItemsList;
       // filter in shopping items for inputvalue
@@ -39,7 +44,7 @@ class Container extends React.Component {
         console.log(allCurrentShoppingItems);
       };
       // create newState
-      const newState = { prevState, shoppingItemsList: allCurrentShoppingItems };
+      const newState = { ...prevState, shoppingItemsList: allCurrentShoppingItems };
       return newState
     });
 
@@ -66,10 +71,7 @@ class Container extends React.Component {
     }
     return newItem
   }
-  handleChange(event) {
-    const inPutField = event.target.value;
-    return inPutField
-  }
+
 
   handleClickShoppingItem = (event) => {
     const clickedItemHTML = event.target;
@@ -100,9 +102,11 @@ class Container extends React.Component {
         <h1>Boodschappenlijst </h1>
         <ShoppingList
           items={this.state.shoppingItemsList}
+          input={this.state.inputField}
           handleClickShoppingItem={this.handleClickShoppingItem}
           handleClickInputField={this.handleClickInputField}
           handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
         />
         <h1>Winkelmand</h1>
         <Cart items={this.state.cartItems}
