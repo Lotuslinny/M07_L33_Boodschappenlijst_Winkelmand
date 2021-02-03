@@ -16,16 +16,16 @@ class Container extends React.Component {
         { type: "Cartlist", id: 2, title: "Chocolade" },
         { type: "Cartlist", id: 3, title: "Sperziebonen" }
       ],
-      inputField: { type: "input", title: " " },
+      inputField: { value: "" },
     }
     this.handleClickShoppingItem = this.handleClickShoppingItem.bind(this)
     this.handleClickCart = this.handleClickCart.bind(this)
+    this.handleChange = this.handleChange.bind(this)
     this.handleClickInputField = this.handleClickInputField.bind(this)
   }
-  handleClickInputField = (event) => {
-    const input = event.target;
-    const inputValue = input.title;
-    console.log(inputValue)
+  handleClickInputField = () => {
+    const inputValue = handleChange();
+    //console.log(inputValue)
     this.setState((prevState) => {
       // get all current shoppingItemsList 
       const allCurrentShoppingItems = this.state.shoppingItemsList;
@@ -44,13 +44,13 @@ class Container extends React.Component {
     });
 
   }
-  createNewShoppingItem = (inputValue) => {
+  createNewShoppingItem = (value) => {
     // create new item
     const newShoppingItem = {
       type: "ShoppingList",
       id: this.state.shoppingItemsList.length + 1,
       //key: this.state.id,
-      title: inputValue
+      title: value
     }
     return newShoppingItem
   }
@@ -66,6 +66,11 @@ class Container extends React.Component {
     }
     return newItem
   }
+  handleChange(event) {
+    const inPutField = event.target.value;
+    return inPutField
+  }
+
   handleClickShoppingItem = (event) => {
     const clickedItemHTML = event.target;
     // get value from clicked item.
@@ -97,6 +102,7 @@ class Container extends React.Component {
           items={this.state.shoppingItemsList}
           handleClickShoppingItem={this.handleClickShoppingItem}
           handleClickInputField={this.handleClickInputField}
+          handleChange={this.handleChange}
         />
         <h1>Winkelmand</h1>
         <Cart items={this.state.cartItems}

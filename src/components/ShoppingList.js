@@ -7,7 +7,9 @@ const ShoppingList = (props) => {
     <div>
       <InputField
         type={props.text}
-        value={props.title} />
+        value={props.title}
+        handleChange={props.handleChange}
+      />
       <button
         //key={props.id}
         type={props.onClick}
