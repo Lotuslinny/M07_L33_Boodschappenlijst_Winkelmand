@@ -32,7 +32,8 @@ const List = (props) => {
                 //id={item.id}
                 className="list-item"
                 item={item.title}
-                type={item.type} />
+                type={item.type}
+              />
             )
         })}
       </ul>

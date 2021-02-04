@@ -12,15 +12,14 @@ class Container extends React.Component {
         { type: "Shoppinglist", id: 2, title: "Pak melk" }
       ],
       cartItems: [
-        { type: "Cartlist", id: 1, title: "Peren" },
-        { type: "Cartlist", id: 2, title: "Chocolade" },
-        { type: "Cartlist", id: 3, title: "Sperziebonen" }
+        { type: "Cartlist", id: 1, title: "Peren", amount: 1 },
+        { type: "Cartlist", id: 2, title: "Chocolade", amount: 1 },
+        { type: "Cartlist", id: 3, title: "Sperziebonen", amount: 1 }
       ],
       inputField: { value: "" },
     }
     this.handleClickShoppingItem = this.handleClickShoppingItem.bind(this)
     this.handleClickCart = this.handleClickCart.bind(this)
-    this.handleChange = this.handleChange.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -49,13 +48,13 @@ class Container extends React.Component {
     });
 
   }
-  createNewShoppingItem = (value) => {
+  createNewShoppingItem = (inputValue) => {
     // create new item
     const newShoppingItem = {
       type: "ShoppingList",
       id: this.state.shoppingItemsList.length + 1,
       //key: this.state.id,
-      title: value
+      title: inputValue
     }
     return newShoppingItem
   }
@@ -67,7 +66,8 @@ class Container extends React.Component {
     const newItem = {
       type: "Cartlist",
       id: this.state.cartItems.length + 1,
-      title: clickedItem
+      title: clickedItem,
+      amount: 1
     }
     return newItem
   }
@@ -91,7 +91,7 @@ class Container extends React.Component {
         //console.log(allCurrentCartItems);
       };
       // create newState
-      const newState = { prevState, cartItems: allCurrentCartItems };
+      const newState = { ...prevState, cartItems: allCurrentCartItems };
       return newState
     });
 

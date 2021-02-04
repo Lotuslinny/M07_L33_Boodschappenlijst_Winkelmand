@@ -28,6 +28,7 @@ const CartListItem = (props) => {
         className="list-item"
         value={props.title}>
         <h1>{props.item}</h1>
+        {"hoeveelheid:" + props.amount}
       </li>
     </div >
   )
