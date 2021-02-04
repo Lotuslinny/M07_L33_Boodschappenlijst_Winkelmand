@@ -30,7 +30,7 @@ class Container extends React.Component {
   handleSubmit = (event) => {
     const inputValue = this.state.value
     event.preventDefault();
-    this.setState((...prevState) => {
+    this.setState((prevState) => {
       // get all current shoppingItemsList 
       const allCurrentShoppingItems = this.state.shoppingItemsList;
       // filter in shopping items for inputvalue
