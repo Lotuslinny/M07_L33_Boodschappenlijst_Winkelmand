@@ -33,6 +33,7 @@ const List = (props) => {
                 className="list-item"
                 item={item.title}
                 type={item.type}
+                amount={item.amount}
               />
             )
         })}

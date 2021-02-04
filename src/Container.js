@@ -22,6 +22,7 @@ class Container extends React.Component {
     this.handleClickCart = this.handleClickCart.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this);
+    //this.createNewShoppingItem = this.createNewShoppingItem(this)
   }
   handleChange = (event) => {
     return this.setState({ value: event.target.value });
@@ -38,20 +39,20 @@ class Container extends React.Component {
       // if array length is 0, then the item isnt yet available in the shoppinglist
       if (shoppingItemExists.length === 0) {
         const newShoppingItem = this.createNewShoppingItem(inputValue)
+        //console.log(newShoppingItem);
         // push new item into the array 
         allCurrentShoppingItems.push(newShoppingItem);
-        console.log(allCurrentShoppingItems);
-      };
+        //console.log(allCurrentShoppingItems);
+      }
       // create newState
       const newState = { ...prevState, shoppingItemsList: allCurrentShoppingItems };
       return newState
     });
-
   }
   createNewShoppingItem = (inputValue) => {
     // create new item
     const newShoppingItem = {
-      type: "ShoppingList",
+      type: "Shoppinglist",
       id: this.state.shoppingItemsList.length + 1,
       //key: this.state.id,
       title: inputValue
@@ -83,18 +84,24 @@ class Container extends React.Component {
       const allCurrentCartItems = this.state.cartItems;
       // filter in cart items for clickedItem value
       const itemExists = allCurrentCartItems.filter(item => item.title === clickedItem);
+
       // if array length is 0, then the item isnt yet available in the cart
       if (itemExists.length === 0) {
         const newItem = this.createNewItem(clickedItem)
+        //console.log("hello" + newItem)
         // push new item into the array 
         allCurrentCartItems.push(newItem);
         //console.log(allCurrentCartItems);
-      };
-      // create newState
-      const newState = { ...prevState, cartItems: allCurrentCartItems };
-      return newState
-    });
+        const newState = { ...prevState, cartItems: allCurrentCartItems };
+        return newState
+      }
+      /* else {
+        (itemExists.length >= 1)
+               
+        itemExists.amount++
 
+      } */
+    });
   }
   render() {
     return (
@@ -104,9 +111,9 @@ class Container extends React.Component {
           items={this.state.shoppingItemsList}
           input={this.state.inputField}
           handleClickShoppingItem={this.handleClickShoppingItem}
-          handleClickInputField={this.handleClickInputField}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
+        //createNewShoppingItem={this.createNewShoppingItem}
         />
         <h1>Winkelmand</h1>
         <Cart items={this.state.cartItems}
@@ -117,3 +124,9 @@ class Container extends React.Component {
   }
 }
 export default Container
+
+/* addAmountItem = (clickedItem) => {
+  const newAmount =
+    clickedItem.amount++;
+  return newAmount
+}; */
