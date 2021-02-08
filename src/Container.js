@@ -22,7 +22,6 @@ class Container extends React.Component {
     this.handleClickCart = this.handleClickCart.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this);
-    //this.createNewShoppingItem = this.createNewShoppingItem(this)
   }
   handleChange = (event) => {
     return this.setState({ value: event.target.value });
@@ -68,12 +67,20 @@ class Container extends React.Component {
       type: "Cartlist",
       id: this.state.cartItems.length + 1,
       title: clickedItem,
-      amount: 1
+      amount: 0
     }
     return newItem
   }
-
-
+  addAmountItem = (clickedItem) => {
+    const cartItems = [...this.state.cartItems];
+    const newList = cartItems.map(cartItem => {
+      if (cartItem.title === clickedItem) {
+        cartItem.amount++;
+      }
+      return cartItem;
+    });
+    this.setState({ cartItems: newList })
+  }
   handleClickShoppingItem = (event) => {
     const clickedItemHTML = event.target;
     // get value from clicked item.
@@ -95,12 +102,10 @@ class Container extends React.Component {
         const newState = { ...prevState, cartItems: allCurrentCartItems };
         return newState
       }
-      /* else {
-        (itemExists.length >= 1)
-               
-        itemExists.amount++
-
-      } */
+      else {
+        const newAmountItem = this.addAmountItem(clickedItem)
+        return newAmountItem
+      }
     });
   }
   render() {
@@ -125,8 +130,3 @@ class Container extends React.Component {
 }
 export default Container
 
-/* addAmountItem = (clickedItem) => {
-  const newAmount =
-    clickedItem.amount++;
-  return newAmount
-}; */
