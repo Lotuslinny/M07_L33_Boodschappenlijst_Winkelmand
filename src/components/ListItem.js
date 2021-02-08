@@ -24,12 +24,13 @@ const CartListItem = (props) => {
   return (
     <div >
       <li
-        key={props.item.id}
+        key={props.id}
         className="list-item"
-        value={props.item.title}
-        amount={props.item.amount}>
+        value={props.title}
+        amount={props.amount}>
         <h1>{props.item}</h1>
         {"hoeveelheid:" + props.amount}
+
       </li>
     </div >
   )

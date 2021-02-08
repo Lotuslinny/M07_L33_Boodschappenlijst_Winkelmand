@@ -67,46 +67,35 @@ class Container extends React.Component {
       type: "Cartlist",
       id: this.state.cartItems.length + 1,
       title: clickedItem,
-      amount: 0
-    }
-    return newItem
-  }
+      amount: 1
+    };
+    const cartList = [...this.state.cartItems];
+    cartList.push(newItem);
+    this.setState({ cartItems: cartList })
+  };
   addAmountItem = (clickedItem) => {
-    const cartItems = [...this.state.cartItems];
-    const newList = cartItems.map(cartItem => {
+    const currentCartItems = [...this.state.cartItems];
+    const newCartList = currentCartItems.map(cartItem => {
       if (cartItem.title === clickedItem) {
         cartItem.amount++;
       }
       return cartItem;
     });
-    this.setState({ cartItems: newList })
+    this.setState({ cartItems: newCartList })
   }
   handleClickShoppingItem = (event) => {
-    const clickedItemHTML = event.target;
     // get value from clicked item.
-    const clickedItem = clickedItemHTML.innerText;
-    // console.log(clickedItem)
-    this.setState((prevState) => {
-      // get all current cart items
-      const allCurrentCartItems = this.state.cartItems;
-      // filter in cart items for clickedItem value
-      const itemExists = allCurrentCartItems.filter(item => item.title === clickedItem);
-
-      // if array length is 0, then the item isnt yet available in the cart
-      if (itemExists.length === 0) {
-        const newItem = this.createNewItem(clickedItem)
-        //console.log("hello" + newItem)
-        // push new item into the array 
-        allCurrentCartItems.push(newItem);
-        //console.log(allCurrentCartItems);
-        const newState = { ...prevState, cartItems: allCurrentCartItems };
-        return newState
-      }
-      else {
-        const newAmountItem = this.addAmountItem(clickedItem)
-        return newAmountItem
-      }
-    });
+    const clickedItem = event.target.innerText;
+    // filter in cart items for clickedItem value
+    const currentList = [...this.state.cartItems]
+    const itemExists = currentList.filter(item => item.title === clickedItem);
+    // if array length is 0, then the item isnt yet available in the cart
+    if (itemExists.length === 0) {
+      this.createNewItem(clickedItem)
+    }
+    else {
+      this.addAmountItem(clickedItem)
+    }
   }
   render() {
     return (
@@ -129,4 +118,3 @@ class Container extends React.Component {
   }
 }
 export default Container
-
