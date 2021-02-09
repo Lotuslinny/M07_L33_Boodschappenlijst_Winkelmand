@@ -13,6 +13,7 @@ const ShoppingList = (props) => {
       />
 
       <List
+        className="v"
         items={props.items}
         handleClickShoppingItem={props.handleClickShoppingItem}
       />

@@ -7,7 +7,7 @@ const ListItem = (props) => {
     console.log(props.item)
   } */
   return (
-    <div style={{ backgroundColor: "#f4f4f4" }}>
+    <div className="r">
       <li
         key={props.item.id}
         //id={props.item.id}
@@ -22,10 +22,10 @@ const ListItem = (props) => {
 }
 const CartListItem = (props) => {
   return (
-    <div >
+    <div className="c">
       <li
         key={props.id}
-        className="list-item"
+        className="list-item-cart"
         value={props.title}
         amount={props.amount}>
         <h1>{props.item}</h1>

@@ -9,8 +9,8 @@ const List = (props) => {
    hem uit je container halen en dan dus d.m.v.
    props.functieNaam hem hier in je onClick zetten */
   return (
-    <div>
-      <ul>
+    <div className="x">
+      <ul className="l">
         {props.items.map((item) => {
           //return props.items
           if (item.type === "Shoppinglist")
@@ -18,7 +18,7 @@ const List = (props) => {
               <ListItem
                 key={item.id}
                 //id={item.id}
-                className="list-item"
+                //className="shopping-list-item"
                 handleClickShoppingItem={props.handleClickShoppingItem}
                 //filterClickedItem={props.filterClickedItem}
                 item={item.title}
@@ -30,7 +30,7 @@ const List = (props) => {
               <CartListItem
                 key={item.id}
                 //id={item.id}
-                className="list-item"
+                //className="list-item"
                 item={item.title}
                 type={item.type}
                 amount={item.amount}
