@@ -99,21 +99,25 @@ class Container extends React.Component {
   }
   render() {
     return (
-      <div>
-        <h1>Boodschappenlijst </h1>
-        <ShoppingList
-          items={this.state.shoppingItemsList}
-          input={this.state.inputField}
-          handleClickShoppingItem={this.handleClickShoppingItem}
-          handleChange={this.handleChange}
-          handleSubmit={this.handleSubmit}
-        //createNewShoppingItem={this.createNewShoppingItem}
-        />
-        <h1>Winkelmand</h1>
-        <Cart items={this.state.cartItems}
-          handleClickCart={this.handleClickCart}
-        />
-      </div >
+      <div className="A">
+        <div className="s">
+          <h1>Boodschappenlijst </h1>
+          <ShoppingList
+            items={this.state.shoppingItemsList}
+            input={this.state.inputField}
+            handleClickShoppingItem={this.handleClickShoppingItem}
+            handleChange={this.handleChange}
+            handleSubmit={this.handleSubmit}
+          //createNewShoppingItem={this.createNewShoppingItem}
+          />
+        </div>
+        <div className="c">
+          <h1>Winkelmand</h1>
+          <Cart items={this.state.cartItems}
+            handleClickCart={this.handleClickCart}
+          />
+        </div >
+      </div>
     )
   }
 }

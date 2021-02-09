@@ -4,7 +4,7 @@ import List from "./List"
 const Cart = (props) => {
 
   return (
-    <div>
+    <div className="cart">
       <List items={props.items}
       />
       <button className="cart-button"

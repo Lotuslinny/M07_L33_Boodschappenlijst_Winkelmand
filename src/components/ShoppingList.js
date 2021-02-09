@@ -4,7 +4,7 @@ import List from "./List"
 
 const ShoppingList = (props) => {
   return (
-    <div>
+    <div className="shopping-list">
       <InputField
         type={props.text}
         value={props.title}

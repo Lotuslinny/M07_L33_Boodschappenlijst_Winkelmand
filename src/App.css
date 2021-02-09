@@ -1,5 +1,26 @@
+.A{
+  display: flex;
+  margin-left: 20em;
+}
+.s {
+  background-color: blue;
+  margin-right: 10em;
+}
+.shopping-list{
+  background-color: red;
+  display: column;
+  flex-direction: row;
+
+}
+.cart{
+  background-color:green;
 
 
+
+}
+.list-item{
+  display: flex;
+}
 .r:nth-child(odd) {
   background: #5F9EA0;
 }
