@@ -9,8 +9,8 @@ const List = (props) => {
    hem uit je container halen en dan dus d.m.v.
    props.functieNaam hem hier in je onClick zetten */
   return (
-    <div className="x">
-      <ul className="l">
+    <div>
+      <ul className="ul">
         {props.items.map((item) => {
           //return props.items
           if (item.type === "Shoppinglist")
