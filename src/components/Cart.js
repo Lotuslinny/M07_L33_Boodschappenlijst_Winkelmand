@@ -5,8 +5,10 @@ const Cart = (props) => {
 
   return (
     <div className="cart">
-      <List items={props.items}
-      />
+      <div className="c-list">
+        <List items={props.items}
+        />
+      </div>
       <button className="cart-button"
         onClick={props.handleClickCart}>
         Leeg Winkelwagen

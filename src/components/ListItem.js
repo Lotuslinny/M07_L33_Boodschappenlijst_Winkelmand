@@ -7,11 +7,10 @@ const ListItem = (props) => {
     console.log(props.item)
   } */
   return (
-    <div className="r">
+    <div className="shopping-list-item">
       <li
         key={props.item.id}
         //id={props.item.id}
-        className="list-item"
         onClick={props.handleClickShoppingItem}
         //filterClickedItem={props.filterClickedItem}
         value={props.item.title} >
@@ -22,10 +21,9 @@ const ListItem = (props) => {
 }
 const CartListItem = (props) => {
   return (
-    <div className="c">
+    <div className="cart-list-item">
       <li
         key={props.id}
-        className="list-item-cart"
         value={props.title}
         amount={props.amount}>
         <h1>{props.item}</h1>

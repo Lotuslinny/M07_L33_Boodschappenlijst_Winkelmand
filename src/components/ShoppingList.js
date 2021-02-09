@@ -4,19 +4,21 @@ import List from "./List"
 
 const ShoppingList = (props) => {
   return (
-    <div className="shopping-list">
-      <InputField
-        type={props.text}
-        value={props.title}
-        handleChange={props.handleChange}
-        handleSubmit={props.handleSubmit}
-      />
-
-      <List
-        className="v"
-        items={props.items}
-        handleClickShoppingItem={props.handleClickShoppingItem}
-      />
+    <div className="shoppinglist">
+      <div className="inputfield">
+        <InputField
+          type={props.text}
+          value={props.title}
+          handleChange={props.handleChange}
+          handleSubmit={props.handleSubmit}
+        />
+      </div>
+      <div className="s-list">
+        <List
+          items={props.items}
+          handleClickShoppingItem={props.handleClickShoppingItem}
+        />
+      </div>
     </div>
   )
 }

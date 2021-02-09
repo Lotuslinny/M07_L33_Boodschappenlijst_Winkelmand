@@ -99,8 +99,8 @@ class Container extends React.Component {
   }
   render() {
     return (
-      <div className="A">
-        <div className="s">
+      <div className="container">
+        <div className="shoppinglist-box">
           <h1>Boodschappenlijst </h1>
           <ShoppingList
             items={this.state.shoppingItemsList}
@@ -111,7 +111,7 @@ class Container extends React.Component {
           //createNewShoppingItem={this.createNewShoppingItem}
           />
         </div>
-        <div className="c">
+        <div className="cart-box">
           <h1>Winkelmand</h1>
           <Cart items={this.state.cartItems}
             handleClickCart={this.handleClickCart}

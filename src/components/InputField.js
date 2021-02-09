@@ -2,11 +2,9 @@ import React from "react"
 
 const InputField = (props) => {
   return (
-    <div>
+    <div className="input-field">
       <form onSubmit={props.handleSubmit}>
         <input
-          className="input-field"
-          //key={props.id}
           type={props.text}
           value={props.value}
           onChange={props.handleChange}>
