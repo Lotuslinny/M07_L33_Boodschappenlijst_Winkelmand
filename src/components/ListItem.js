@@ -14,7 +14,7 @@ const ListItem = (props) => {
         onClick={props.handleClickShoppingItem}
         //filterClickedItem={props.filterClickedItem}
         value={props.item.title} >
-        <h1>{props.item}</h1>
+        <h1 className="shopping-list-item__h1">{props.item}</h1>
       </li>
     </div >
   )
@@ -26,7 +26,7 @@ const CartListItem = (props) => {
         key={props.id}
         value={props.title}
         amount={props.amount}>
-        <h1>{props.item}</h1>
+        <h1 className="cart-list-item__h1">{props.item}</h1>
         {"hoeveelheid:" + props.amount}
 
       </li>

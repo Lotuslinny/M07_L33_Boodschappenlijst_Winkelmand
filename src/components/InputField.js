@@ -5,11 +5,13 @@ const InputField = (props) => {
     <div className="input-field">
       <form onSubmit={props.handleSubmit}>
         <input
+          className="input-field__input"
           type={props.text}
           value={props.value}
           onChange={props.handleChange}>
         </input>
         <input
+          className="input-field__submit"
           type="submit"
           value="Voeg toe"
         >
